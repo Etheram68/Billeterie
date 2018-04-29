@@ -1,12 +1,10 @@
-/*
-To change this license header, choose License Headers in Project Properties.
-To change this template file, choose Tools | Templates
-and open the template in the editor.
-*/
-/* 
-    Created on : 20 oct. 2017, 11:50:59
-    Author     : hloua
-*/
+.carousel-page
+{
+    width:100%;
+    height:300px;
+    background-color:#5f666d;
+    color:white;
+}
 .title
 {
     text-align: center;
@@ -94,7 +92,7 @@ form{
     margin-bottom: 15px;
 }
 
-.footer a,p{
+.footer a,.footer p{
     color: #ccd;
 }
 .footer li{

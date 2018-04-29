@@ -1,5 +1,98 @@
 {% extends "OCTicketingBundle::layout.html.twig" %}
 {% block headtitle %}{{ parent() }}- Index{% endblock %}
 {% block body %}
-    hello world
+   <div class="container">
+       {% for message in app.session.flashbag.get('') %}
+           <div class="alert alert-sucess" role="alert">
+               {{ message }}
+           </div>
+       {% endfor %}
+       <div class="col-md-12">
+           <h3 class="title">Accueil</h3>
+       </div>
+
+       <div class="col-md-12">
+           <div class="card text-center">
+               <div class="card-body">
+                   <h5 class="car-title">Bienvenue</h5>
+                   <p class="card-text">L'équipe du Louvre vous shouaite une bonne navigation sur la plateform de réservation du Musée.</p>
+                   <a href="{{ path('oc_ticketing_booking') }}" class="btn btn-primary">Réservez-votre billet</a>
+               </div>
+           </div>
+       </div>
+
+       <div class="col-md-12" style="margin-top: 50px;">
+           <div class="row">
+               <div class="col-md-5">
+                   <div class="card border-dark mb-3">
+                       <div class="card-body text-dark">
+                           <h6 class="card-title"> Les tarifs </h6>
+                           <ul>
+                               <li>Normal (dès 12 ans): 16€</li>
+                               <li>Enfant (de 4 ans à 12 ans): 8€</li>
+                               <li>Senior (dès 60 ans): 12€</li>
+                               <li>Réduit (Sous conditions*): 10€</li>
+                           </ul>
+                           <p>* réservé aux catégories suivantes: étudiant, employé du musée, Ministère de la culture, militaire, sous présentation d'un justificatifs</p>
+                           <h6 class="card-title"> Les moyens de paiements </h6>
+                           <ul>
+                               <li>EuroCard</li>
+                               <li>MasterCard</li>
+                           </ul>
+                           <p>Données du paiment sécurisées par Stripe</p><br />
+                       </div>
+                   </div>
+               </div>
+               <div class="col-md-2"></div>
+               <div class="col-md-5">
+                   <div class="card border-dark mb-3">
+                       <div class="card-body text-dark">
+                           <h6 class="card-title"> Les billets </h6>
+                           <ul>
+                               <li>Journée* : Entrée dès l'ouverture</li>
+                               <li>Demi-journée : Entrée dès 14h</li>
+                           </ul>
+                           <p>*Commande de billet journée impossible pour le jour même après 14h et pour les jours passés.</p>
+                           <h6 class="card-title"> LEs horaires </h6>
+                           <ul>
+                               <li>Fermés les 1er mai, 1er novembre, 25 décembre et le mardi</li>
+                               <li>Tout les jours de 9h à 18h30*</li>
+                               <li>Nocturnes tout les Mercredi et Vendredi jusqu'a 22h*</li>
+                           </ul>
+                           <p>* l'évacuation des salles commencera 30 minuttes avant les heures de fermeture.</p>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+
+       <div id="my_Carousel" class="carousel slide" data-ride="carousel">
+           <ol class="carousel-indicators">
+               <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+               <li data-target="#myCarousel" data-slide-to="1"></li>
+               <li data-target="#myCarousel" data-slide-to="2"></li>
+           </ol>
+           <div class="carousel-inner">
+               <div class="item active">
+                   <img src="https://www.louvre.fr/sites/default/files/imagecache/940x500/medias/medias_images/images/louvre-carrousel-eugene-delacroix-la-lutte-de-jacob-avec-l-ange.jpg?1523265420" alt="Eugene delacroix" class="img-responsive" style="margin: 0px auto;" />
+                   <div class="carousel-caption"> Page 1 de présentation</div>
+               </div>
+               <div class="item">
+                   <img src="https://www.louvre.fr/sites/default/files/imagecache/940x500/medias/medias_images/images/louvre-carrousel-evangiles-de-drogon-940x500.jpg?1520257534" alt="Eugene delacro" class="img-responsive" style="margin: 0px auto;" />
+                   <div class="carousel-caption"> Page 2 de présentation</div>
+               </div>
+               <div class="item">
+                   <img src="https://www.louvre.fr/sites/default/files/imagecache/940x500/medias/medias_images/images/louvre-carrousel-eugene-delacroix-le-28-juillet-1830-la-liberte-guidant-le-peuple-detail.jpg?1519988083" alt="Eugene delacroi" class="img-responsive" style="margin: 0px auto;" />
+                   <div class="carousel-caption"> Page 3 de présentation</div>
+               </div>
+           </div>
+           <a class="left carousel-control" href="#my_carousel" data-slide="prev">
+               <span class="glyphicon glyphicon-chevron-left"></span>
+           </a>
+           <a class="right carousel-control" href="#my_carousel" data-slide="next">
+               <span class="glyphicon glyphicon-chevron-right"></span>
+           </a>
+       </div>
+
+   </div>
 {% endblock %}
