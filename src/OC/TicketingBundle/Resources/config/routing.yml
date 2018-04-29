@@ -1,0 +1,27 @@
+oc_ticketing_homepage:
+    path:     /
+    defaults: { _controller: OCTicketingBundle:Books:index }
+
+oc_ticketing_news:
+    path:    /news
+    defaults: { _controller: OCTicketingBundle:Books:news }
+
+oc_ticketing_contact:
+    path:    /contact
+    defaults: { _controller: OCTicketingBundle:Books:contact }
+
+oc_ticketing_booking:
+    path:    /charge
+    defaults: { _controller: OCTicketingBundle:Books:charge }
+
+oc_ticketing_pay:
+    path:    /pay
+    defaults: { _controller: OCTicketingBundle:Books:pay }
+
+oc_ticketing_validation:
+    path:    /validation
+    defaults: { _controller: OCTicketingBundle:Books:validation }
+
+oc_ticketing_mail:
+    path:    /mail
+    defaults: { _controller: OCTicketingBundle:Books:mail }
