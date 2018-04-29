@@ -1,1 +1,5 @@
-hello news!
+{% extends "OCTicketingBundle::layout.html.twig" %}
+{% block headtitle %}{{ parent() }}- News{% endblock %}
+{% block body %}
+    hello news
+{% endblock %}
