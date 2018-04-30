@@ -242,9 +242,14 @@ class Books
      */
     public function setSerial($serial)
     {
-        $this->serial = $serial;
+        $n = $this->name;
+        $s = $this->username;
+        $d = $this->date;
 
-        return $this;
+        $base = $n + $s + $d->format('dd/MM');
+        $serial = sha1($base);
+
+        $this->serial = $serial;
     }
 
     /**
@@ -295,6 +300,16 @@ class Books
      * @return \Doctrine\Common\Collections\Collection
      */
     public function getTickets()
+    {
+        return $this->tickets;
+    }
+
+    /**
+     * Get tickets
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getTicket()
     {
         return $this->tickets;
     }

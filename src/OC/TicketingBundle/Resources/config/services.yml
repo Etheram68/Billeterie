@@ -3,13 +3,13 @@ services:
 #        class: OC\TicketingBundle\Example
 #        arguments: ["@service_id", "plain_value", "%parameter%"]
 #oc_ticketing.CheckSchedule:
-#  class: OC\TicketingBundle\CheckSchedule\CheckSchedule
- # arguments: ["@=service('doctrine.orm.entity_manager').getRepository('OCTicketingBundle:Schedule')"]
+ # class: OC\TicketingBundle\CheckSchedule\CheckSchedule
+  #arguments: ["@=service('doctrine.orm.entity_manager').getRepository('OCTicketingBundle:Schedule')"]
 
-#oc_booking.CheckPrice:
+#oc_ticketing.CheckPrice:
  # class: OC\TicketingBundle\CheckPrice\CheckPrice
- # arguments: ["@=service('doctrine.orm.entity_manager').getRepository('OCTicketingBundle:Price')"]
+  #arguments: ["@=service('doctrine.orm.entity_manager').getRepository('OCTicketingBundle:Price')"]
 
-#oc_booking.SaveBook:
+#oc_ticketing.SaveBook:
  # class: OC\TicketingBundle\SaveBook\SaveBook
- # arguments: ['@doctrine.orm.entity_manager']
+  #arguments: ['@doctrine.orm.entity_manager']

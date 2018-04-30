@@ -16,7 +16,7 @@ class CheckSchedule
         $count = count($book->getTicket());
         $oldcount;
         $repo = $this->repo;
-        scheduled = $repo->findDate($date);
+        $scheduled = $repo->findDate($date);
 
         if ($scheduled)
         {
