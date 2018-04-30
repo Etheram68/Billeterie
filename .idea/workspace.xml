@@ -35,16 +35,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="books.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/books.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="763">
-              <caret line="152" column="0" lean-forward="false" selection-start-line="152" selection-start-column="0" selection-end-line="152" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="layout.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/layout.html.twig">
           <provider selected="true" editor-type-id="text-editor">
@@ -202,8 +192,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="885" />
-    <option name="y" value="142" />
+    <option name="x" value="1438" />
+    <option name="y" value="83" />
     <option name="width" value="1918" />
     <option name="height" value="1038" />
   </component>
@@ -416,15 +406,15 @@
       <updated>1525000716867</updated>
       <workItem from="1525000721940" duration="1757000" />
       <workItem from="1525002492526" duration="13790000" />
-      <workItem from="1525069316553" duration="7445000" />
+      <workItem from="1525069316553" duration="8055000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="22992000" />
+    <option name="totallyTimeSpent" value="23602000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="885" y="142" width="1918" height="1038" extended-state="0" />
+    <frame x="1438" y="83" width="1918" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
