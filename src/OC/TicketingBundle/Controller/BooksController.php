@@ -38,7 +38,7 @@ class BooksController extends Controller
             }
         }
         $em->fluch();
-        return $this->render('OCTicketingBundle:Books:news.html.twig', array('book' => 'form' => $form->createView()));
+        return $this->render('OCTicketingBundle:Books:news.html.twig');
     }
 
     public function contactAction()

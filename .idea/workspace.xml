@@ -15,6 +15,16 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
+      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/Books/index.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="540">
+              <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="CheckSchedule.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/CheckSchedule/CheckSchedule.php">
           <provider selected="true" editor-type-id="text-editor">
@@ -38,8 +48,8 @@
       <file leaf-file-name="services.yml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/config/services.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="450">
-              <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <state relative-caret-position="420">
+              <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -49,18 +59,20 @@
         <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Repository/BooksRepository.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="390">
-              <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+              <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BooksController.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="BooksController.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Controller/BooksController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-166">
-              <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-              <folding />
+            <state relative-caret-position="734">
+              <caret line="40" column="69" lean-forward="false" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
+              <folding>
+                <element signature="e#49#106#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -69,7 +81,7 @@
         <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="120">
-              <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="18" />
+              <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -114,8 +126,6 @@
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/Books/carousel.html.twig" />
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/layout.html.twig" />
         <option value="$PROJECT_DIR$/web/css/books.css" />
-        <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/Books/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Controller/BooksController.php" />
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Entity/Books.php" />
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Entity/Tickets.php" />
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Entity/Price.php" />
@@ -125,9 +135,11 @@
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/CheckPrice/CheckPrice.php" />
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/CheckSchedule/CheckSchedule.php" />
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/SaveBook/SaveBook.php" />
-        <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Resources/config/services.yml" />
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Resources/config/routing.yml" />
         <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/navbar.html.twig" />
+        <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Resources/config/services.yml" />
+        <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Controller/BooksController.php" />
+        <option value="$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/Books/index.html.twig" />
       </list>
     </option>
   </component>
@@ -204,8 +216,8 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1510" />
-    <option name="y" value="152" />
+    <option name="x" value="881" />
+    <option name="y" value="166" />
     <option name="width" value="1918" />
     <option name="height" value="1038" />
   </component>
@@ -460,15 +472,15 @@
       <updated>1525000716867</updated>
       <workItem from="1525000721940" duration="1757000" />
       <workItem from="1525002492526" duration="13790000" />
-      <workItem from="1525069316553" duration="15167000" />
+      <workItem from="1525069316553" duration="15624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30714000" />
+    <option name="totallyTimeSpent" value="31171000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1510" y="152" width="1918" height="1038" extended-state="0" />
+    <frame x="881" y="166" width="1918" height="1038" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -679,14 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/Books/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="25" column="45" lean-forward="false" selection-start-line="25" selection-start-column="45" selection-end-line="25" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/Books/carousel.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -829,22 +833,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="4" column="18" lean-forward="true" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/config/services.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="450">
-          <caret line="15" column="0" lean-forward="true" selection-start-line="15" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/DependencyInjection/Configuration.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-167">
@@ -864,15 +852,41 @@
     <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Repository/BooksRepository.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="390">
-          <caret line="13" column="0" lean-forward="true" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/config/services.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="14" column="2" lean-forward="false" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Controller/BooksController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-166">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        <state relative-caret-position="734">
+          <caret line="40" column="69" lean-forward="false" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
+          <folding>
+            <element signature="e#49#106#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/config/routing.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="4" column="18" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/OC/TicketingBundle/Resources/views/Books/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="18" column="55" lean-forward="false" selection-start-line="18" selection-start-column="55" selection-end-line="18" selection-end-column="55" />
           <folding />
         </state>
       </provider>
