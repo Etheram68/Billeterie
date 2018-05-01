@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Schedule
  *
- * @ORM\Table(name="schedule")
+ * @ORM\Table(name="bil_schedule")
  * @ORM\Entity(repositoryClass="OC\TicketingBundle\Repository\ScheduleRepository")
  */
 class Schedule
@@ -79,7 +79,7 @@ class Schedule
      *
      * @return Schedule
      */
-    public function setDate($date)
+    public function setDate(\DateTime $date)
     {
         $this->date = $date;
 

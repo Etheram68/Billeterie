@@ -31,9 +31,9 @@ class Price
     /**
      * @var int
      *
-     * @ORM\Column(name="amout", type="integer")
+     * @ORM\Column(name="amount", type="integer")
      */
-    private $amout;
+    private $amount;
 
     /**
      * @var string
@@ -78,27 +78,27 @@ class Price
     }
 
     /**
-     * Set amout
+     * Set amount
      *
-     * @param integer $amout
+     * @param integer $amount
      *
      * @return Price
      */
-    public function setAmout($amout)
+    public function setAmount($amount)
     {
-        $this->amout = $amout;
+        $this->amount = $amount;
 
         return $this;
     }
 
     /**
-     * Get amout
+     * Get amount
      *
      * @return int
      */
-    public function getAmout()
+    public function getAmount()
     {
-        return $this->amout;
+        return $this->amount;
     }
 
     /**

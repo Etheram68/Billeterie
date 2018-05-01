@@ -1,18 +1,20 @@
 <?php
 namespace OC\TicketingBundle\CheckPrice;
+
 class CheckPrice
 {
     private $repo;
+
     public function __construct(\OC\TicketingBundle\Repository\PriceRepository $repo)
     {
         $this->repo = $repo;
     }
 
-    public function amoutType(\OC\TicketingBundle\Entity\Books $book)
+    public function amountType(\OC\TicketingBundle\Entity\Books $book)
     {
         $tickets = $book->getTicket();
         $today = new \DateTime('today');
-        $totalAmout = 0;
+        $totalAmount = 0;
 
         if($tickets !== null)
         {

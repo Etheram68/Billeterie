@@ -4,7 +4,7 @@ namespace OC\TicketingBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use OC\TicketingBundle\Entity\Tickets;
-use Doctrine\common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * Books
@@ -162,7 +162,7 @@ class Books
     }
 
     /**
-     * Set usurname
+     * Set username
      *
      * @param string $username
      *
@@ -176,7 +176,7 @@ class Books
     }
 
     /**
-     * Get usurname
+     * Get username
      *
      * @return string
      */
@@ -210,6 +210,14 @@ class Books
     }
 
     /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tickets = new ArrayCollection();
+    }
+
+    /**
      * Set amount
      *
      * @param integer $amount
@@ -236,11 +244,9 @@ class Books
     /**
      * Set serial
      *
-     * @param string $serial
-     *
-     * @return Books
+     * @return Tickets
      */
-    public function setSerial($serial)
+    public function setSerial()
     {
         $n = $this->name;
         $s = $this->username;
@@ -261,25 +267,17 @@ class Books
     {
         return $this->serial;
     }
-      
-    /**
-     * Constructor
-     */
-    public function __construct()
-    {
-        $this->tickets = new \Doctrine\Common\Collections\ArrayCollection();
-    }
 
     /**
      * Add ticket
      *
-     * @param \OC\TicketingBundle\Entity\Tickets $ticket
+     * @param \OC\TicketingBundle\Tickets $tickets
      *
      * @return Books
      */
-    public function addTicket(\OC\TicketingBundle\Entity\Tickets $ticket)
+    public function addTicket(Tickets $tickets)
     {
-        $this->tickets[] = $ticket;
+        $this->tickets[] = $tickets;
 
         return $this;
     }
@@ -287,11 +285,11 @@ class Books
     /**
      * Remove ticket
      *
-     * @param \OC\TicketingBundle\Entity\Tickets $ticket
+     * @param \OC\TicketingBundle\Tickets $tickets
      */
-    public function removeTicket(\OC\TicketingBundle\Entity\Tickets $ticket)
+    public function removeTicket(Tickets $tickets)
     {
-        $this->tickets->removeElement($ticket);
+        $this->tickets->removeElement($tickets);
     }
 
     /**

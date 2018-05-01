@@ -42,6 +42,7 @@ class Tickets
      * @ORM\Column(name="discount", type="boolean")
      */
     private $discount;
+
     /**
      * @ORM\ManyToOne(targetEntity="OC\TicketingBundle\Entity\Books", inversedBy="tickets", cascade={"persist"})
      * @ORM\JoinColumn(nullable=false)
@@ -109,13 +110,13 @@ class Tickets
     /**
      * Set birthDate
      *
-     * @param \DateTime $birthDate
+     * @param \DateTime $date
      *
      * @return Tickets
      */
-    public function setBirthDate($birthDate)
+    public function setBirthDate($date)
     {
-        $this->birthDate = $birthDate;
+        $this->birthDate = $date;
 
         return $this;
     }

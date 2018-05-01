@@ -1,12 +1,14 @@
 <?php
 namespace OC\TicketingBundle\CheckSchedule;
+
+
 class CheckSchedule
 {
     private $repo;
 
     public function __construct(\OC\TicketingBundle\Repository\ScheduleRepository $repo)
     {
-        $repo->repo = $repo;
+        $this->repo = $repo;
     }
 
     public function isFree(\OC\TicketingBundle\Entity\Books $book)
@@ -16,7 +18,10 @@ class CheckSchedule
         $count = count($book->getTicket());
         $oldcount;
         $repo = $this->repo;
+
         $scheduled = $repo->findDate($date);
+
+
 
         if ($scheduled)
         {
@@ -26,7 +31,9 @@ class CheckSchedule
         {
             $oldcount = 0;
         }
-        if ( $oldcount + $count > 1000)
+
+
+        if( $oldcount + $count > 1000)
         {
             return true;
         }

@@ -28,14 +28,14 @@ class ScheduleRepository extends \Doctrine\ORM\EntityRepository
             $schedule->setDate($date);
             $schedule->setCount($count);
             $em->persist($schedule);
-            $em->fluch();
+            $em->flush();
         }
         else
         {
             $oldcount = $scheduled->getCount();
             $scheduled->setCount($oldcount + $count);
             $scheduled = $em->merge($scheduled);
-            $em->fluch();
+            $em->flush();
         }
     }
 }

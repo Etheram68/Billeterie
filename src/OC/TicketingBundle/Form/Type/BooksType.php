@@ -25,7 +25,7 @@ class BooksType extends AbstractType
             ->add('name', TextType::class)
             ->add('username', TextType::class)
             ->add('country', CountryType::class)
-            ->add('ticket', CollectionType::class, array(
+            ->add('tickets', CollectionType::class, array(
                 'entry_type'   => TicketsType::class,
                 'allow_add'    => true,
                 'allow_delete' => false
