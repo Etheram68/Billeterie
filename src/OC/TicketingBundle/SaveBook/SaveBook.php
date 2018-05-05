@@ -25,6 +25,6 @@ class SaveBook
             $em->persist($ticket);
         }
         $em->persist($book);
-        $em->fluch();
+        $em->flush();
     }
 }

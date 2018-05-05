@@ -13,7 +13,7 @@ class PriceRepository extends \Doctrine\ORM\EntityRepository
     public function findPrice($type)
     {
         $qb = $this->createQueryBuilder('p')
-            ->select('p.amout')
+            ->select('p.amount')
             ->where('p.type = :type')
             ->setParameter(':type', $type);
         $result = $qb->getQuery()

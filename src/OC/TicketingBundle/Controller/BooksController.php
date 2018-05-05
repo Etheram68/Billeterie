@@ -61,7 +61,7 @@ class BooksController extends Controller
         return $this->render('OCTicketingBundle:Books:contact.html.twig');
     }
 
-    public function payAction()
+    public function payAction(Request $request)
     {
         $session = new Session();
         $book = $session->get('book');
@@ -69,9 +69,52 @@ class BooksController extends Controller
         return $this->render('OCTicketingBundle:Books:pay.html.twig', array('book' => $book));
     }
 
-    public function chargeAction()
+    public function chargeAction(Request $request)
     {
-        return $this->render('OCTicketingBundle:Books:charge.html.twig');
+        Stripe\Stripe::setApiKey("sk_test_5Gt4c4qjUq2zAN7swepRgwat");
+
+        $token = $_POST['stripeToken'];
+
+        $session = new Session();
+        $book = $session->get('book');
+        $book->setSerial();
+        $flash = $this->get('session')->getFlashBag();
+
+        try
+        {
+            $charge = Stripe\Charge::create(array(
+                "amount"      =>   $book->getAmount() * 100,
+                "currency"    =>   "eur",
+                "description" =>   "Billeterie du Louvre",
+                "source"      =>   $token,
+            ));
+            if($book !== null)
+            {
+                $savebook = $this->container->get('oc_ticketing.SaveBook');
+                $savebook->saveAll($book);
+                $idBook = $book->getID();
+                $session->set('idBook', $idBook);
+            }
+        }
+        catch(\Stripe\Error\Card $e)
+        {
+            $body = $e->getJsonBody();
+            $err = $body['error'];
+            $flash->add('errorstripe', 'Votre carte a été déclinée, veuillez recommencer la saisie avec une carte valide.');
+            return $this->redirectToRoute('oc_ticketing_pay');
+        }
+        catch(\Stripe\Error\Base $e)
+        {
+            $flash->add('errorstripe', 'Une erreure est survenu lors de votre paiement, nous vous invitons à recommencer.');
+            return $this->redirectToRoute('oc_ticketing_pay');
+        }
+        catch(Exception $e)
+        {
+            $flash->add('errorstripe', 'Une erreure est survenu lors de votre paiement, nous vous invitons à réitérer votre commande ultérieurement.');
+            return $this->redirectToRoute('oc_ticketing_pay');
+        }
+
+        return $this->redirectToRoute('oc_ticketing_validation');
     }
 
     public function validationAction(Request $request)
@@ -88,7 +131,7 @@ class BooksController extends Controller
         $message = (new \Swift_Message('Validation'));
         $mail = $book->getMail();$image = 'http://localhost/Billeterie/web/img/louvre.png';
         $message
-            ->setForm(['frey.francois68@gmail.com' => 'Billeterie du Louvre'])
+            ->setFrom(['frey.francois68@gmail.com' => 'Billeterie du Louvre'])
             ->setTo($mail)
             ->setBody(
                 $this->renderView(
