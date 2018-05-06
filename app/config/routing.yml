@@ -1,7 +1,4 @@
-oc_ticketing:
-    resource: "@OCTicketingBundle/Resources/config/routing.yml"
+AppBundle:
+    resource: "@AppBundle/Resources/config/routing.yml"
     prefix:   /
 
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation

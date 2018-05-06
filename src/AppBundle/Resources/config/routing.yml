@@ -1,0 +1,27 @@
+AppBundle_homepage:
+    path:     /
+    defaults: { _controller: AppBundle:Books:index }
+
+AppBundle_books:
+    path:    /book
+    defaults: { _controller: AppBundle:Books:news }
+
+AppBundle_contact:
+    path:    /contact
+    defaults: { _controller: AppBundle:Books:contact }
+
+AppBundle_charge:
+    path:    /charge
+    defaults: { _controller: AppBundle:Books:charge }
+
+AppBundle_pay:
+    path:    /pay
+    defaults: { _controller: AppBundle:Books:pay }
+
+AppBundle_validation:
+    path:    /validation
+    defaults: { _controller: AppBundle:Books:validation }
+
+AppBundle_mail:
+    path:    /mail
+    defaults: { _controller: AppBundle:Books:mail }

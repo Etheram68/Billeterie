@@ -1,0 +1,30 @@
+{% block head %}
+<nav class="navbar navbar-toggleable-md navbar-light bg-light">
+    <div class="row">
+        <div class="col-md-10">
+            <a class="navbar-brand" href="{{ path('AppBundle_homepage') }}"><img src="{{ asset('img/louvre.png') }}" \></a>
+        </div>
+
+        <div class="col-md-2" style="padding-top:25px; padding-left: 25px;">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+    </div>
+
+    <div class="dropdown collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active p-3">
+                <a class="nav-link" href="{{ path('AppBundle_homepage') }}">Accueil <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active p-3">
+                <a class="nav-link" href="{{ path('AppBundle_books') }}">Reservation</a>
+            </li>
+            <li class="nav-item active p-3">
+                <a class="nav-link" href="{{ path('AppBundle_contact') }}">Contact</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+{%  endblock %}
