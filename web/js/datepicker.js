@@ -25,21 +25,26 @@
                         onSelect: manageTypeTickets
     });
                 
-    var FreeDays = ['05-01', '11-01', '12-25'];  
+    var FreeDays = ['05-01', '11-01', '12-25'];
     
     function DisabledDays(date)
     {
          var  j = date.getDate(), m = date.getMonth(), a = date.getFullYear();
          var weeklyOff = date.getDay();
-        
+
          if($.inArray((m + 1) + '-' + j,FreeDays) != -1 || weeklyOff== 2)
          {
             return [false];
          }
          return [true];
-        
+
+        if($.inArray((m + 1) + '-' + j,FreeDays) != -1 || date.getDate(05-01)== 2)
+        {
+            return [false];
+        }
+        return [true];
     }
-    
+
     function manageTypeTickets()
     {
 

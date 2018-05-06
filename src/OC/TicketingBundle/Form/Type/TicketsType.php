@@ -28,7 +28,7 @@ class TicketsType extends AbstractType
                 'label'      =>  'Date de Naissance'
         ))
             ->add('discount', ChoiceType::class, array(
-                "choices"   => array("Nom" => false, "Oui" => true),
+                "choices"   => array("Non" => false, "Oui" => true),
                 "label"     =>  'Réduction'
             ));
     }

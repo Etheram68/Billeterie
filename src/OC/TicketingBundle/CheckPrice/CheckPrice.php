@@ -51,7 +51,19 @@ class CheckPrice
                             break;
                     }
                 }
+                if($Interval <12 AND $ticket->getDiscount() === true)
+                {
+                    $type = "12";
+                }
+
+                if($ticket->getType() == false)
+                {
+                    $ticketprice = $repo->findPrice($type) / 2;
+                }
+                else
+                {
                 $ticketprice = $repo->findPrice($type);
+                }
                 $book->setAmount($amount + $ticketprice);
             }
         }

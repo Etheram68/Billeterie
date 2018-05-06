@@ -144,9 +144,4 @@ class BooksController extends Controller
         $session->getFlashBag()->add('sucessBook', 'Votre commande à bien été enregistrée');
         return $this->redirectToRoute('oc_ticketing_homepage');
     }
-
-    Public function mailAction()
-    {
-        return $this->render('OCTicketingBundle:Books:mail.html.twig');
-    }
 }
