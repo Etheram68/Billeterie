@@ -6,6 +6,7 @@ use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class TicketsType extends AbstractType
@@ -27,9 +28,10 @@ class TicketsType extends AbstractType
                 'attr'       =>  array('class' => 'datepicker'),
                 'label'      =>  'Date de Naissance'
         ))
-            ->add('discount', ChoiceType::class, array(
-                "choices"   => array("Non" => false, "Oui" => true),
-                "label"     =>  'Réduction'
+            ->add('discount', CheckboxType::class, array(
+                "label"     =>  'Réduction',
+                'required'  =>  false,
+                'empty_data'      =>   'réservé aux catégories suivantes: étudiant, employé du musée, Ministère de la culture, militaire, sous présentation d\'un justificatifs',
             ));
     }
 

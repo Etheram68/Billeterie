@@ -1,5 +1,52 @@
 {% extends "layout.html.twig" %}
 {% block headtitle %}{{ parent() }}- Contact{% endblock %}
 {% block body %}
-    hello contact
+    {% for message in app.session.flashbag.get('fullbookeddate') %}
+        <div class="alert alert-danger" role="alert">
+            {{ message }}
+        </div>
+    {% endfor %}
+
+    {% block form %}
+        <div class="container">
+            <form method="post">
+                <div class="well" align="center">
+                    {{ form_start(form) }}
+
+                        <div class="form-group">
+                            {{ form_label(form.subject, 'Sujet', {'label_attr': {'class': 'foo'}}) }}
+                            {{ form_widget(form.subject, {'attr' : {'class': 'foo'}}) }}
+                            {{ form_errors(form.subject) }}
+                        </div>
+
+                        <div class="form-group">
+                            {{ form_label(form.name, 'Nom', {'label_attr': {'class': 'foo'}}) }}
+                            {{ form_widget(form.name, {'attr' : {'class': 'foo'}}) }}
+                            {{ form_errors(form.name) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.email, 'Adress Email', {'label_attr': {'class': 'foo'}}) }}
+                            {{ form_widget(form.email, {'attr' : {'class': 'foo'}}) }}
+                            {{ form_errors(form.email) }}
+                        </div>
+                        <div class="form-group">
+                            {{ form_label(form.message, 'Message', {'label_attr': {'class': 'foo'}}) }}
+                            {{ form_widget(form.message, {'attr' : {'class': 'form-control-perso'}}) }}
+                            {{ form_errors(form.message) }}
+                        </div>
+
+                    <div class="tickets" align="left">
+                            <div class="form-group">
+                                {{ form_widget(form.valider, {'attr': {'class': 'btn btn-primary'}}) }}
+                                {{ form_rest(form) }}
+                                {{ form_end(form) }}
+                            </div>
+                    </div>
+
+                    {{ form_rest(form) }}
+                    {{ form_end(form) }}
+                </div>
+            </form>
+        </div>
+{% endblock %}
 {% endblock %}

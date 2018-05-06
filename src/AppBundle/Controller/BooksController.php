@@ -56,9 +56,49 @@ class BooksController extends Controller
         return $this->render('Books/news.html.twig', array('book' => $book, 'form' => $form->createView()));
     }
 
-    public function contactAction()
+    public function contactAction(Request $request)
     {
-        return $this->render('Books/contact.html.twig');
+        $form = $this->createForm('AppBundle\Form\Type\ContactType', null, array(
+            'action' => $this->generateUrl('AppBundle_contact'),
+            'method' => 'POST'
+        ));
+
+        if($request->isMethod('POST'))
+        {
+            $form->handleRequest($request);
+            if($form->isValid())
+            {
+                if($this->sendEmail($form->getData()))
+                {
+                    return $this->redirectToRoute('AppBundle_contact');
+                }
+                else
+                {
+                    var_dump("Erreur");
+                }
+            }
+        }
+        return $this->render('Books/contact.html.twig', array('form' => $form->createView()
+        ));
+    }
+    private function sendEmail($data)
+    {
+        $myappContactMail = 'frey.francois68@gmail.com';
+        $myappContactPassword = '12399201';
+
+        $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
+            ->setUsername($myappContactMail)
+            ->setPassword($myappContactPassword);
+
+        $mailer = \Swift_Mailer::newInstance($transport);
+
+        $message = \Swift_Message::newInstance("Contact Billeterie du Louvre". $data["subject"])
+            ->setFrom(array($myappContactMail => "Message de".$data["name"]))
+            ->setTo(array(
+                $myappContactMail => $myappContactMail
+            ))
+            ->setBody($data["message"]."<br />Corps du message :".$data["email"]);
+        return $mailer->send($message);
     }
 
     public function payAction(Request $request)
