@@ -31,7 +31,6 @@ class TicketsType extends AbstractType
             ->add('discount', CheckboxType::class, array(
                 "label"     =>  'Réduction',
                 'required'  =>  false,
-                'empty_data'      =>   'réservé aux catégories suivantes: étudiant, employé du musée, Ministère de la culture, militaire, sous présentation d\'un justificatifs',
             ));
     }
 

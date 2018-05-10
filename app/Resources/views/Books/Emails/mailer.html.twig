@@ -17,9 +17,7 @@
         </p>
     </div>
     <h4>Votre Réservation</h4>
-    <p>Nom : <strong>{{ book.name|capitalize }}</strong><br>
-        Prénom : <strong>{{book.username|capitalize }}</strong><br>
-        Date de visite : <strong>{{ book.date|date('d-m-Y') }}</strong><br>
+    <p> Date de visite : <strong>{{ book.date|date('d-m-Y') }}</strong><br>
         N° de commande : <strong>{{ book.serial }}</strong>
     </p>
     <div class="row">

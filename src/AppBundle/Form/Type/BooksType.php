@@ -22,8 +22,6 @@ class BooksType extends AbstractType
             'format'  => 'dd/MM/yyyy'
         ))
             ->add('mail', EmailType::class)
-            ->add('name', TextType::class)
-            ->add('username', TextType::class)
             ->add('country', CountryType::class)
             ->add('tickets', CollectionType::class, array(
                 'entry_type'   => TicketsType::class,

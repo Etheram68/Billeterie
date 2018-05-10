@@ -84,7 +84,7 @@ class BooksController extends Controller
     private function sendEmail($data)
     {
         $myappContactMail = 'frey.francois68@gmail.com';
-        $myappContactPassword = '12399201';
+        $myappContactPassword = '68Jokc8263';
 
         $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
             ->setUsername($myappContactMail)

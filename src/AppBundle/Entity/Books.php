@@ -40,20 +40,6 @@ class Books
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="username", type="string", length=255)
-     */
-    private $username;
-
-    /**
-     * @var string
-     *
      * @ORM\Column(name="country", type="string", length=255)
      */
     private $country;
@@ -138,54 +124,6 @@ class Books
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     *
-     * @return Books
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-
-    /**
-     * Set username
-     *
-     * @param string $username
-     *
-     * @return Books
-     */
-    public function setUsername($username)
-    {
-        $this->username = $username;
-
-        return $this;
-    }
-
-    /**
-     * Get username
-     *
-     * @return string
-     */
-    public function getUsername()
-    {
-        return $this->username;
-    }
-
-    /**
      * Set country
      *
      * @param string $country
@@ -248,12 +186,7 @@ class Books
      */
     public function setSerial()
     {
-        $n = $this->name;
-        $s = $this->username;
-        $d = $this->date;
-
-        $base = $n + $s + $d->format('dd/MM');
-        $serial = sha1($base);
+        $serial = (uniqid());
 
         $this->serial = $serial;
     }
