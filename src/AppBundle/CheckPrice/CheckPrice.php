@@ -64,6 +64,7 @@ class CheckPrice
                 {
                 $ticketprice = $repo->findPrice($type);
                 }
+                $ticket->setTicketPrice($ticketprice);
                 $book->setAmount($amount + $ticketprice);
             }
         }

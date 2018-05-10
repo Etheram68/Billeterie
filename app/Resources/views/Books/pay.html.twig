@@ -10,6 +10,26 @@
                     </div>
                  {% endfor %}
 
+                <div class="col-md-10" style="margin-left: 20px; padding-bottom: 10px;">
+                    <h4>Votre Réservation :</h4>
+                    <p> Date de visite : <strong>{{ book.date|date('d-m-Y') }}</strong><br>
+                    </p>
+                    {% for ticket in book.tickets %}
+                        <div class="card-block" style="border: solid; border-color: #C0C0C0; padding: 15px; border-radius: 10px;">
+                            Nom : {{ ticket.name|capitalize }}<br>
+                            Prénom  : {{ ticket.username|capitalize }}<br>
+                            Date de Naissance : {{ ticket.birthDate|date('d-m-Y') }}<br>
+                            {% if  ticket.discount == 1  %}
+                                Tarif réduit : Oui* <br>
+                            {%endif%}
+                            Prix du billet : {{ ticket.ticketprice }},00€
+                        </div>
+                        {% if  ticket.discount == 1  %}
+                           * Tarif réduit sous présentation d'un justificatifs a l'entrée du musée.
+                        {%endif%}
+                    {% endfor %}
+                </div>
+
                     <div id="pay-invoice" class="card">
 
                         <form action="{{ path('AppBundle_charge') }}" method="POST" novalidate="novalidate" id="payment-form">

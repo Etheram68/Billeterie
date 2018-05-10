@@ -72,6 +72,13 @@ class Tickets
      */
     private $username;
 
+    /**
+     * @var int
+     *
+     * @ORM\Column(name="ticketprice", type="integer")
+     */
+    private $ticketprice;
+
 
     /**
      * Get id
@@ -249,5 +256,29 @@ class Tickets
     public function getBooks()
     {
         return $this->books;
+    }
+
+    /**
+     * Set amount
+     *
+     * @param integer $ticketprice
+     *
+     * @return Tickets
+     */
+    public function setTicketprice($ticketprice)
+    {
+        $this->ticketprice = $ticketprice;
+
+        return $this;
+    }
+
+    /**
+     * Get amount
+     *
+     * @return int
+     */
+    public function getTicketprice()
+    {
+        return $this->ticketprice;
     }
 }
