@@ -12,10 +12,6 @@ use Symfony\Component\Config\Definition\Exception\Exception;
 use AppBundle\Entity\Books;
 use Stripe;
 
-/**
- * Class BooksController
- * @Route("books")
- */
 class BooksController extends Controller
 {
     /**
@@ -70,7 +66,7 @@ class BooksController extends Controller
             {
                 if($this->sendEmail($form->getData()))
                 {
-                    return $this->redirectToRoute('AppBundle_contact');
+                    return $this->redirectToRoute('AppBundle_homepage');
                 }
                 else
                 {
@@ -83,22 +79,19 @@ class BooksController extends Controller
     }
     private function sendEmail($data)
     {
-        $myappContactMail = 'frey.francois68@gmail.com';
-        $myappContactPassword = '68Jokc8263';
+        $session = new Session();
+        $session->clear();
 
-        $transport = \Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, 'ssl')
-            ->setUsername($myappContactMail)
-            ->setPassword($myappContactPassword);
-
-        $mailer = \Swift_Mailer::newInstance($transport);
-
+        $message = (new \Swift_Message('Validation'));
         $message = \Swift_Message::newInstance("Contact Billeterie du Louvre". $data["subject"])
-            ->setFrom(array($myappContactMail => "Message de".$data["name"]))
-            ->setTo(array(
-                $myappContactMail => $myappContactMail
-            ))
+            ->setFrom(array('frey.francois68@gmail.com' => "Message de".$data["name"]))
+            ->setTo('frey.francois68@gmail.com')
             ->setBody($data["message"]."<br />Corps du message :".$data["email"]);
-        return $mailer->send($message);
+
+        $mailer = $this->get('mailer');
+        $mailer->send($message);
+        $session->getFlashBag()->add('sucessBook', 'Votre Email à bien été envoyée, nous vous répondrons dans les plus bref délait');
+        return $this->redirectToRoute('AppBundle_contact');
     }
 
     public function payAction(Request $request)
@@ -181,7 +174,7 @@ class BooksController extends Controller
             );
         $mailer = $this->get('mailer');
         $mailer->send($message);
-        $session->getFlashBag()->add('sucessBook', 'Votre commande à bien été enregistrée');
+        $session->getFlashBag()->add('sucessBook', 'Votre commande à bien été enregistrée, un mail vas vous être envoyé');
         return $this->redirectToRoute('AppBundle_homepage');
     }
 }

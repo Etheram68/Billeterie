@@ -25,19 +25,22 @@ $(document).ready(function() {
         onSelect: manageTypeTickets
     });
 
-    var FreeDays = ['05-01', '11-01', '12-25'];
+    var FreeDays = ['01/05', '01/11', '25/12'];
 
     function DisabledDays(date)
     {
-        var  j = date.getDate(), m = date.getMonth(), a = date.getFullYear();
-        var weeklyOff = date.getDay();
-
-        if($.inArray((m + 1) + '-' + j, FreeDays) != -1 || weeklyOff== 2)
+        if($.inArray($.datepicker.formatDate('dd/mm', date), FreeDays) > - 1)
         {
-            return [false];
+            return [false, "", "Unavaible"];
         }
-        return [true];
-
+        else if(date.getDay() === 2)
+        {
+            return [false, "", "Unavaible"];
+        }
+        else
+        {
+            return [true];
+        }
     }
 
     function manageTypeTickets()

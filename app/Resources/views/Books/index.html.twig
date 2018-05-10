@@ -2,11 +2,14 @@
 {% block headtitle %}{{ parent() }}- Index{% endblock %}
 {% block body %}
    <div class="container">
-       {% for message in app.session.flashbag.get('') %}
-           <div class="alert alert-sucess" role="alert">
-               {{ message }}
+       <div class="row">
+           <div class="col-md-12">
+               {% for message in app.session.flashbag.get('sucessBook') %}
+                   <div class="alert alert-success" role="alert">
+                       {{ message }}
+                   </div>
+               {% endfor %}
            </div>
-       {% endfor %}
        <div class="col-md-12">
            <h3 class="title">Accueil</h3>
        </div>
@@ -64,6 +67,7 @@
                    </div>
                </div>
            </div>
+       </div>
        </div>
 
        <div id="carousel" class="carousel slide" data-ride="carousel">

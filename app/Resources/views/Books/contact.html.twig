@@ -1,11 +1,21 @@
 {% extends "layout.html.twig" %}
 {% block headtitle %}{{ parent() }}- Contact{% endblock %}
 {% block body %}
-    {% for message in app.session.flashbag.get('fullbookeddate') %}
+    {% for message in app.session.flashbag.get('errorBook') %}
         <div class="alert alert-danger" role="alert">
             {{ message }}
         </div>
     {% endfor %}
+    <div class="container">
+        <div class="col-md-12" style="padding-bottom: 30px;">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="car-title">Information</h5>
+                    <p class="card-text">Vous avez une demande à formuler ou souhaitez faire une suggestion ? Prenez soin d'identifier l'interlocuteur le mieux adapté, votre demande n'en sera que mieux traitée ! </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     {% block form %}
         <div class="container">
