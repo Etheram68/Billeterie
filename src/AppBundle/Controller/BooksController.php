@@ -52,6 +52,10 @@ class BooksController extends Controller
         return $this->render('Books/news.html.twig', array('book' => $book, 'form' => $form->createView()));
     }
 
+    /**
+     * @Route("/contact",name="books_contact")
+     * @Method({"POST"})
+     */
     public function contactAction(Request $request)
     {
         $form = $this->createForm('AppBundle\Form\Type\ContactType', null, array(
@@ -77,6 +81,7 @@ class BooksController extends Controller
         return $this->render('Books/contact.html.twig', array('form' => $form->createView()
         ));
     }
+
     private function sendEmail($data)
     {
         $session = new Session();
@@ -94,6 +99,9 @@ class BooksController extends Controller
         return $this->redirectToRoute('AppBundle_contact');
     }
 
+    /**
+     * @Route("/pay",name="books_pay")
+     */
     public function payAction(Request $request)
     {
         $session = new Session();
@@ -149,6 +157,7 @@ class BooksController extends Controller
 
         return $this->redirectToRoute('AppBundle_validation');
     }
+
 
     public function validationAction(Request $request)
     {
