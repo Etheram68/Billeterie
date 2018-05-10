@@ -11,7 +11,7 @@
                  {% endfor %}
 
                 <div class="col-md-10" style="margin-left: 20px; padding-bottom: 10px;">
-                    <h4>Votre Réservation :</h4>
+                    <h4>Récapitulatif de votre Réservation :</h4>
                     <p> Date de visite : <strong>{{ book.date|date('d-m-Y') }}</strong><br>
                     </p>
                     {% for ticket in book.tickets %}
@@ -35,11 +35,11 @@
                         <form action="{{ path('AppBundle_charge') }}" method="POST" novalidate="novalidate" id="payment-form">
 
                             <div class="form-group">
-                                <label for="cc-payment" class="control-label mb-1">Montant à régler</label>
+                                <label for="cc-payment" class="control-label mb-1">Montant totale à régler</label>
                                 <input id="cc-payment" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="{{ book.amount }}" readonly="readonly" />
                             </div>
                             <div class="form-group">
-                                <label for="cc-name" class="control-label mb-1">Nom sur carte bancaire</label>
+                                <label for="cc-name" class="control-label mb-1">Nom du titulaire de la carte bancaire</label>
                                 <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Insérez le nom présent sur la carte bancaire" autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error" />
                             </div>
                             <div class="form-row">
