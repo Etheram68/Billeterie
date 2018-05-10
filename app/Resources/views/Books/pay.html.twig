@@ -12,8 +12,7 @@
 
                 <div class="col-md-10" style="margin-left: 20px; padding-bottom: 10px;">
                     <h4>Récapitulatif de votre Réservation :</h4>
-                    <p> Date de visite : <strong>{{ book.date|date('d-m-Y') }}</strong><br>
-                    </p>
+                    <p> Date de visite : <strong>{{ book.date|date('d-m-Y') }}</strong><br></p>
                     {% for ticket in book.tickets %}
                         <div class="card-block" style="border: solid; border-color: #C0C0C0; padding: 15px; border-radius: 10px;">
                             Nom : {{ ticket.name|capitalize }}<br>
