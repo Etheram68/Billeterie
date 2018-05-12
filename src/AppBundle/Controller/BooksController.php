@@ -87,11 +87,11 @@ class BooksController extends Controller
         $session = new Session();
         $session->clear();
 
-        $message = (new \Swift_Message('Validation'));
-        $message = \Swift_Message::newInstance("Contact Billeterie du Louvre". $data["subject"])
-            ->setFrom(array('frey.francois68@gmail.com' => "Message de".$data["name"]))
+        $message = \Swift_Message::newInstance("Contact ". $data["subject"])
+            ->setContentType("text/html")
+            ->setFrom(array($data["email"] => "Message de ".$data["name"]))
             ->setTo('frey.francois68@gmail.com')
-            ->setBody($data["message"]."<br />Corps du message :".$data["email"]);
+            ->setBody("Corps du message: <br>".$data["message"]." <br><br>Email du contact :<br>".$data["email"]);
 
         $mailer = $this->get('mailer');
         $mailer->send($message);
@@ -163,15 +163,12 @@ class BooksController extends Controller
     {
         $session = new Session();
         $id = $session->get('idBook');
-
         $session->clear();
-
         $book = $this->getDoctrine()
-                    ->getRepository(Books::class)
-                    ->find($id);
-
-        $message = (new \Swift_Message('Validation'));
-        $mail = $book->getMail();$image = 'http://localhost/Billeterie/web/img/louvre.png';
+            ->getRepository(Books::class)
+            ->find($id);
+        $message = (new \Swift_Message('Validation de votre commande'));
+        $mail = $book->getMail();$image = 'https://projet4-site.fr/web/img/louvre.png';
         $message
             ->setFrom(['frey.francois68@gmail.com' => 'Billeterie du Louvre'])
             ->setTo($mail)
@@ -184,6 +181,6 @@ class BooksController extends Controller
         $mailer = $this->get('mailer');
         $mailer->send($message);
         $session->getFlashBag()->add('sucessBook', 'Votre commande à bien été enregistrée, un mail vas vous être envoyé');
-        return $this->redirectToRoute('AppBundle_homepage');
+        return $this->render('Books/index.html.twig');
     }
 }

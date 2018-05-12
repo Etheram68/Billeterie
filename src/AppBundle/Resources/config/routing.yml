@@ -10,6 +10,10 @@ AppBundle_contact:
     path:    /contact
     defaults: { _controller: AppBundle:Books:contact }
 
+AppBundle_sendmail:
+    path:    /contactsend
+    defaults: { _controller: AppBundle:Books:sendemail }
+
 AppBundle_charge:
     path:    /charge
     defaults: { _controller: AppBundle:Books:charge }
