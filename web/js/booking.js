@@ -3,13 +3,13 @@
     var $container = $('div#AppBundle_books_tickets');
 
     // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
-    var index = $container.find(':input').length;  
-    
+    var index = $container.find(':input').length;
+
 
     // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
     $('#add_ticket').click(function(e) {
       addCategory($container);
-      
+
     $( ".datepicker" ).datepicker({
 			showOn: "focus",
 			buttonImage: "images/general/calendar.gif",
@@ -25,7 +25,7 @@
 
       e.preventDefault(); // évite qu'un # apparaisse dans l'URL
       return false;
-      
+
     });
 
     // On ajoute un premier champ automatiquement s'il n'en existe pas déjà un (cas d'une nouvelle annonce par exemple).
@@ -36,9 +36,9 @@
       $container.children('div').each(function() {
         addDeleteLink($(this));
       });
-      
-    
-   
+
+
+
     }
 
     // La fonction qui ajoute un formulaire CategoryType
@@ -80,7 +80,7 @@
         return false;
       });
     }
-    
+
     $( ".datepicker" ).datepicker({
 			showOn: "focus",
 			buttonImage: "images/general/calendar.gif",
@@ -92,6 +92,6 @@
    			beforeShowDay: '',
 			showAnim: "show"
 		});
-                
+
   });
-  
+

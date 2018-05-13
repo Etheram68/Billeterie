@@ -51,9 +51,17 @@ class CheckPrice
                             break;
                     }
                 }
+
+                if($Interval <4 AND $ticket->getDiscount() === true)
+                {
+                    $type = "4";
+                    $ticket->setDiscount('0');
+                }
+
                 if($Interval <12 AND $ticket->getDiscount() === true)
                 {
                     $type = "12";
+                    $ticket->setDiscount('0');
                 }
 
                 if($ticket->getType() == false)

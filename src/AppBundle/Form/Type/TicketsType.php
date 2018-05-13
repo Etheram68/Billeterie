@@ -24,7 +24,7 @@ class TicketsType extends AbstractType
                 'widget'     =>  'single_text',
                 'html5'      =>  false,
                 'data_class' =>  'DateTime',
-                'format'     =>  'dd/mm/yyyy',
+                'format'     => 'dd/MM/yyyy',
                 'attr'       =>  array('class' => 'datepicker'),
                 'label'      =>  'Date de Naissance'
         ))
