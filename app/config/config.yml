@@ -65,8 +65,8 @@ doctrine:
 swiftmailer:
     transport: gmail
     host: smtp.gmail.com
-    username: ********@gmail.com
-    password: *********
+    username: xxxxx@gmail.com
+    password: xxxxx
     encryption: ssl
     port: 465
     auth_mode: login

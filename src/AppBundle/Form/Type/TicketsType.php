@@ -8,6 +8,7 @@ use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\CountryType;
 
 class TicketsType extends AbstractType
 {
@@ -18,6 +19,9 @@ class TicketsType extends AbstractType
             "attr"     => array('class' =>'typePick'),
             "label"    => 'Type de visite'
         ))
+            ->add('country', CountryType::class, array(
+                'label'  => 'Pays'
+            ))
             ->add('name', TextType::class, array('label' => 'Nom'))
             ->add('username', TextType::class, array('label' => 'Prénom'))
             ->add('birthDate', DateType::class, array(

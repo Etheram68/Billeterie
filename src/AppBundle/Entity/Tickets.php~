@@ -288,28 +288,4 @@ class Tickets
     {
         return $this->ticketprice;
     }
-
-    /**
-     * Set country
-     *
-     * @param string $country
-     *
-     * @return Tickets
-     */
-    public function setCountry($country)
-    {
-        $this->country = $country;
-
-        return $this;
-    }
-
-    /**
-     * Get country
-     *
-     * @return string
-     */
-    public function getCountry()
-    {
-        return $this->country;
-    }
 }

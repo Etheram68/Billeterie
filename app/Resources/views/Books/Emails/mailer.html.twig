@@ -4,7 +4,7 @@
 {% endblock %}
 
 {% block body_html %}
-<div style="background-color: #C0C0C0;"><a href="http://www.louvre.fr/"><img src="https://projet4-site.fr/web/img/louvre.png" alt="header"></a></div>
+<div style="background-color: #C0C0C0;"><a href="http://www.louvre.fr/"><img src="https://i.pinimg.com/originals/74/55/66/745566d00dd890504b0e518372f0120a.png" alt="header"></a></div>
 {% block body %}
 
 <div class="container">
@@ -28,7 +28,7 @@
                     Nom : {{ ticket.name|capitalize }}<br>
                     Prénom  : {{ ticket.username|capitalize }}<br>
                     Date de Naissance : {{ ticket.birthDate|date('d-m-Y') }}<br>
-                    Prix du billet: {{ ticket.ticketprice }},00€
+                    Prix du billet : {{ ticket.ticketprice }},00€ <br>
                     {% if  ticket.discount == 1  %}
                         <br>
                         Tarif réduit : Oui*

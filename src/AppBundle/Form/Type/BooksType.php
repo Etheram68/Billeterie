@@ -6,8 +6,6 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\Extension\Core\Type\CountryType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use AppBundle\Form\Type\TicketsType;
@@ -22,7 +20,6 @@ class BooksType extends AbstractType
             'format'  => 'dd/MM/yyyy'
         ))
             ->add('mail', EmailType::class)
-            ->add('country', CountryType::class)
             ->add('tickets', CollectionType::class, array(
                 'entry_type'   => TicketsType::class,
                 'allow_add'    => true,
