@@ -170,7 +170,7 @@ class BooksController extends Controller
         $message = (new \Swift_Message('Validation de votre commande'));
         $mail = $book->getMail();$image = 'https://projet4-site.fr/web/img/louvre.png';
         $message
-            ->setFrom(['frey.francois68@gmail.com' => 'Billeterie du Louvre'])
+            ->setFrom(['frey.francois68@gmail.com' => 'Billetterie du Louvre'])
             ->setTo($mail)
             ->setBody(
                 $this->renderView(
