@@ -4,11 +4,23 @@
 
     // On définit un compteur unique pour nommer les champs qu'on va ajouter dynamiquement
     var index = $container.find(':input').length;
-
+      var d = new Date();
+      var hour = d.getHours();
+      var day = d.getDate();
+      var month = d.getMonth() + 1;
+      var year = d.getFullYear();
+      if (day < 10) {
+          day = "0" + day;
+      }
+      if (month < 10) {
+          month = "0" + month;
+      }
+      var today = day + "/" + month + "/" + year;
 
     // On ajoute un nouveau champ à chaque clic sur le lien d'ajout.
     $('#add_ticket').click(function(e) {
       addCategory($container);
+        manageTypeTickets();
 
     $( ".datepicker" ).datepicker({
 			showOn: "focus",
@@ -41,6 +53,23 @@
 
     }
 
+      function manageTypeTickets()
+      {
+
+          var inputWatched = $('.datepicker-book').val();
+          var a = $('.typePick option[value=1]');
+          var b = $('.typePick option[value=0]');
+
+          if (hour >= 14 && inputWatched === today)
+          {
+
+              a.prop( "disabled", true );
+              b.prop("selected", true);
+          }
+          else
+              a.prop( "disabled", false );
+
+      }
     // La fonction qui ajoute un formulaire CategoryType
     function addCategory($container) {
       // Dans le contenu de l'attribut « data-prototype », on remplace :

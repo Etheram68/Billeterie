@@ -33,11 +33,7 @@ $(document).ready(function() {
         {
             return [false, "", "Unavaible"];
         }
-        else if(date.getDay() === 2)
-        {
-            return [false, "", "Unavaible"];
-        }
-        else if(date.getDay() === 0)
+        else if(date.getDay() === 2 || date.getDay() === 0)
         {
             return [false, "", "Unavaible"];
         }
