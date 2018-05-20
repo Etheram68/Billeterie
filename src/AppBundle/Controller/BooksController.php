@@ -180,7 +180,7 @@ class BooksController extends Controller
             );
         $mailer = $this->get('mailer');
         $mailer->send($message);
-        $session->getFlashBag()->add('sucessBook', 'Votre commande à bien été enregistrée, un mail vas vous être envoyé');
+        $session->getFlashBag()->add('sucessBook', 'Votre commande à bien été enregistrée, un mail va vous être envoyé');
         return $this->render('Books/index.html.twig');
     }
 }
