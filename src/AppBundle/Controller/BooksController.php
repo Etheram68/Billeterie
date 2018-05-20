@@ -95,7 +95,7 @@ class BooksController extends Controller
 
         $mailer = $this->get('mailer');
         $mailer->send($message);
-        $session->getFlashBag()->add('sucessBook', 'Votre Email à bien été envoyée, nous vous répondrons dans les plus bref délait');
+        $session->getFlashBag()->add('sucessBook', 'Votre E-mail à bien été envoyée, nous vous répondrons dans les plus brefs délais');
         return $this->redirectToRoute('AppBundle_contact');
     }
 
@@ -126,7 +126,7 @@ class BooksController extends Controller
             $charge = Stripe\Charge::create(array(
                 "amount"      =>   $book->getAmount() * 100,
                 "currency"    =>   "eur",
-                "description" =>   "Billeterie du Louvre",
+                "description" =>   "Billetterie du Louvre",
                 "source"      =>   $token,
             ));
             if($book !== null)
@@ -170,7 +170,7 @@ class BooksController extends Controller
         $message = (new \Swift_Message('Validation de votre commande'));
         $mail = $book->getMail();$image = 'https://projet4-site.fr/web/img/louvre.png';
         $message
-            ->setFrom(['frey.francois68@gmail.com' => 'Billetterie du Louvre'])
+            ->setFrom(['louvre@billeterie.com' => 'Billetterie du Louvre'])
             ->setTo($mail)
             ->setBody(
                 $this->renderView(
